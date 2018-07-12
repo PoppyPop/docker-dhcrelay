@@ -1,8 +1,7 @@
 FROM alpine:latest
 
 RUN set -xe \
-	&& apk update --no-cache && apk upgrade --no-cache \
-	&& apk add --update --no-cache dhcrelay \
+	&& apk add --update --no-cache dhcrelay tzdata \
 	&& rm -rf /var/cache/apk/*
 
 ADD entrypoint.sh /entrypoint.sh
